@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 
-for (( i=0; i<100; i++ )); 
-do 
+for (( i=5; i<15; i++ )); do
 
-	echo red lorry yello lorry
+    RLYL=""
 
-done | say -r 500
+    for (( j=20; j>i; j-- )); do 
 
+    	RLYL="$RLYL red lorry yellow lorry"
+        
+    done
+
+    say -r $(( 40 * i )) $RLYL &
+
+done
